@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+public class TwoNums {
+    public static void main(String[] args) {
+        int[] result = new int[2];
+        int[] num = {2, 11, 7, 15};
+        int target = 9;
+        result = solution(num, target);
+        System.out.println("The array is :");
+        System.out.println("[" + result[0] + "," + result[1] + "]");
+
+    }
+
+    public static int[] solution(int[] nums, int target) {
+        int[] res = new int[2];
+        Arrays.sort(nums);
+
+        int i = 0;
+        int j = nums.length - 1;
+        while (i < j) {
+            if (nums[i] + nums[j] == target) {
+                res = new int[]{nums[i], nums[j]};
+                break;
+            } else if (nums[i] + nums[j] > target) {
+                j--;
+            } else i++;
+        }
+        return res;
+    }
+}
