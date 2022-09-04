@@ -7,7 +7,7 @@ public class TwoNums {
         int target = 9;
         result = solution(num, target);
         System.out.println("The array is :");
-        System.out.println("[" + result[0] + "," + result[1] + "]");
+        System.out.println(Arrays.toString(result));
 
     }
 
